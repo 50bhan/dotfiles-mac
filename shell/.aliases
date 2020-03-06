@@ -1,0 +1,2 @@
+# System
+alias sshconfig="vim ~/.ssh/config"
