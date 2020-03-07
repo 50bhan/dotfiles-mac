@@ -1,2 +1,22 @@
 # System
-alias sshconfig="vim ~/.ssh/config"
+alias UPDATE="sudo apt update && sudo apt upgrade -y"
+alias SSH="vim ~/.ssh/config"
+alias RELOAD="source ~/.zshrc"
+
+# Listing
+alias ls="ls -lah"
+alias PERMISSION='stat -c "%a %n" *'
+
+# Network & Services
+alias DNS="sudo vim /etc/resolvconf/resolv.conf.d/tail"
+alias PING="ping 8.8.8.8"
+alias NSLOOKUP="nslookup google.com"
+alias NETSTAT="netstat -ntulp"
+alias IP="curl ifconfig.me"
+alias IP-LOCATION="geoiplookup "`curl ifconfig.me`""
+alias SERVICES="sudo netstat -plunt"
+alias GROUPS="compgen -g"
+alias USERS="cut -d: -f1 /etc/passwd"
+
+# Docker
+alias DOCKER-STATS='docker stats --no-stream --format "table {{.Name}}\t{{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}" | sort -k 4 -h'
