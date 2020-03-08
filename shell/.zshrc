@@ -111,18 +111,3 @@ for file in ~/.dotfiles/shell/.{exports,aliases,functions}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
-
-# Extra paths
-export PATH=${PATH}:$HOME/.config/composer/vendor/bin
-export PATH=${PATH}:$HOME/symfony/bin
-
-# ---------------------------- Golang ----------------------------
-export GOROOT=/usr/local/go
-export PATH=$PATH:$GOROOT/bin
-
-export GOPATH="$HOME/.golang"
-export PATH=$PATH:$GOPATH
-
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOBIN
-# ----------------------------------------------------------------
