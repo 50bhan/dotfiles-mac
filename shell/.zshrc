@@ -116,6 +116,13 @@ unset file
 export PATH=${PATH}:$HOME/.config/composer/vendor/bin
 export PATH=${PATH}:$HOME/symfony/bin
 
-export PATH=${PATH}:/usr/local/go/bin
+# ---------------------------- Golang ----------------------------
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
+
 export GOPATH="$HOME/.golang"
-export PATH=${PATH}:$GOPATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH
+
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+# ----------------------------------------------------------------
