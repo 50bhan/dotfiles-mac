@@ -3,20 +3,49 @@ alias UPDATE="sudo apt update && sudo apt upgrade -y"
 alias SSH="vim ~/.ssh/config"
 alias RELOAD="source ~/.zshrc"
 
-# Listing
-alias ls="ls -lah"
-alias PERMISSION='stat -c "%a %n" *'
-
-# Network & Services
-alias DNS="sudo vim /etc/resolvconf/resolv.conf.d/tail"
-alias PING="ping 8.8.8.8"
-alias NSLOOKUP="nslookup google.com"
-alias NETSTAT="netstat -ntulp"
-alias IP="curl ifconfig.me"
-alias IP-LOCATION="geoiplookup "`curl ifconfig.me`""
+# Management
 alias SERVICES="sudo netstat -plunt"
 alias GROUPS="compgen -g"
 alias USERS="cut -d: -f1 /etc/passwd"
 
+# Directory listing/traversal
+LS_COLORS=$(is-supported "ls --color" --color -G)
+LS_TIMESTYLEISO=$(is-supported "ls --time-style=long-iso" --time-style=long-iso)
+LS_GROUPDIRSFIRST=$(is-supported "ls --group-directories-first" --group-directories-first)
+
+alias l="ls -lahA $LS_COLORS $LS_TIMESTYLEISO $LS_GROUPDIRSFIRST"
+alias ll="ls -lA $LS_COLORS"
+alias lt="ls -lhAtr $LS_COLORS $LS_TIMESTYLEISO $LS_GROUPDIRSFIRST"
+alias ld="ls -ld $LS_COLORS */"
+alias lpm="stat -c '%a %n' *"
+
+unset LS_COLORS LS_TIMESTYLEISO LS_GROUPDIRSFIRST
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias -- -="cd -"                  # Go to previous dir with -
+alias cd.='cd $(readlink -f .)'    # Go to real dir (i.e. if current dir is linked)
+
+alias tree="tree -A"
+alias treed="tree -d"
+alias tree1="tree -d -L 1"
+alias tree2="tree -d -L 2"
+
+# Network
+alias DNS="sudo vim /etc/resolvconf/resolv.conf.d/tail"
+alias PING="ping 8.8.8.8"
+alias NSLOOKUP="nslookup google.com"
+alias NETSTAT="netstat -ntulp"
+alias IP="dig +short myip.opendns.com @resolver1.opendns.com"
+alias IP-LIST="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+alias IP-LOCATION="curl ipinfo.io"
+alias SPEED="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+
 # Docker
 alias DOCKER-STATS='docker stats --no-stream --format "table {{.Name}}\t{{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}" | sort -k 4 -h'
+
+# Miscellaneous
+alias RF="rm -rf"
+alias PATH='echo -e ${PATH//:/\\n}'
+alias grip="grip -b"
