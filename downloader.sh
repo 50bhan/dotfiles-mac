@@ -6,7 +6,7 @@ TARGET="$HOME/.dotfiles"
 TAR_CMD="tar -xzv -C "$TARGET" --strip-components=1 --exclude='{.gitignore}'"
 
 is_executable() {
-  type "$1" > /dev/null 2>&1
+  type "$1" >/dev/null 2>&1
 }
 
 if is_executable "git"; then
@@ -23,4 +23,6 @@ else
   echo "Installing dotfiles..."
   mkdir -p "$TARGET"
   eval "$CMD"
-fi
+fi &&
+  cd "$TARGET" &&
+  source ./bootstrap.sh
