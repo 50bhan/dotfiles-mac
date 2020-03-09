@@ -1,4 +1,5 @@
 # System
+alias ALIAS="vim ~/.bash_aliases"
 alias UPDATE="sudo apt update && sudo apt upgrade -y"
 alias SSH="vim ~/.ssh/config"
 alias RELOAD="source ~/.zshrc"
@@ -44,6 +45,7 @@ alias SPEED="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/maste
 
 # Docker
 alias DOCKER-STATS='docker stats --no-stream --format "table {{.Name}}\t{{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}" | sort -k 4 -h'
+alias DOCKER-CLEAR-LOGS="echo -e 'truncate -s 0 /var/lib/docker/containers/*/*-json.log' | sudo -i"
 
 # Miscellaneous
 alias RF="rm -rf"
