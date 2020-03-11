@@ -74,9 +74,9 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 rm $HOME/.zshrc
 ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
 
-# Add global gitignore
+# Add global gitconfig & gitignore
+ln -s $HOME/.dotfiles/config/.gitconfig $HOME/.gitconfig
 ln -s $HOME/.dotfiles/shell/.global-gitignore $HOME/.global-gitignore
-git config --global core.excludesfile $HOME/.global-gitignore
 
 # Symlink vim prefs
 rm $HOME/.vimrc
