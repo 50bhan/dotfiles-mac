@@ -76,7 +76,7 @@ ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
 
 # Add global gitconfig & gitignore
 ln -s $HOME/.dotfiles/config/.gitconfig $HOME/.gitconfig
-ln -s $HOME/.dotfiles/shell/.global-gitignore $HOME/.global-gitignore
+ln -s $HOME/.dotfiles/config/.global-gitignore $HOME/.global-gitignore
 
 # Symlink vim prefs
 rm $HOME/.vimrc
