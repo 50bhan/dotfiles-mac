@@ -103,4 +103,31 @@
 	followTags = true
 
 [alias]
+
+	st = status
+
+	sts = status -sb
+
+	cm = commit -av
+
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+	lgp = lg -p
+
+	# Show the diff between the latest commit and the current state
+	df = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
+	dfi = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
+	# Amend the currently staged files to the latest commit
 	amend = commit --amend --reuse-message=HEAD
+
+	# Pull in remote changes for the current repository and all its submodules
+	pl = git pull --recurse-submodules
+
+	# Show verbose output about tags, branches or remotes
+	tags = tag -l
+	branches = branch -a
+	remotes = remote -v
+	
