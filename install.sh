@@ -12,32 +12,36 @@ apt install -yq --fix-missing \
     network-manager-openconnect network-manager-openconnect-gnome \
     build-essential \
     software-properties-common \
+    git \
     unrar \
     gcc \
     make \
     curl \
-    tilix \
     htop \
     vim \
     tcptrack \
-    lnav \
-    geoip-bin \
-    mysql-server &&
+    lnav
 # ------------------------------------ Install & config DNS ------------------------------------
 apt install -y resolvconf &&
-systemctl stop systemd-resolved && # Stop systemd-resolved to avoid overwrite resolv.conf file
-systemctl disable systemd-resolved && # Disable systemd-resolved
-echo nameserver 8.8.8.8 > /etc/resolvconf/resolv.conf.d/tail && # Set "Google" DNS addresses
-echo nameserver 4.2.2.4 >> /etc/resolvconf/resolv.conf.d/tail && # Set "Google" DNS addresses
-resolvconf -u # Make DNS addresses permanent
+
+# Stop systemd-resolved to avoid overwrite resolv.conf file
+systemctl stop systemd-resolved && 
+
+# Disable systemd-resolved
+systemctl disable systemd-resolved &&
+
+# Set "Google" DNS addresses
+echo nameserver 8.8.8.8 > /etc/resolvconf/resolv.conf.d/tail && 
+echo nameserver 4.2.2.4 >> /etc/resolvconf/resolv.conf.d/tail &&
+
+# Make DNS addresses permanent
+resolvconf -u
 # ------------------------------------ Install Docker CE ---------------------------------------
 # Install packages to allow apt to use a repository over HTTPS
 apt install -y \
     apt-transport-https \
     ca-certificates \
-    curl \
     gnupg-agent \
-    software-properties-common &&
 
 # Add Docker’s official GPG key
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && 
