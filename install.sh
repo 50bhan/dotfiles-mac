@@ -5,67 +5,66 @@ touch $HOME/.hushlogin
 
 # ------------------------------------ Update & Upgrade ---------------------------------
 apt clean && apt update -y && apt upgrade -y &&
-# ------------------------------------ Install Tools ------------------------------------
-apt install -yq --fix-missing \
-    net-tools \
-    network-manager-openvpn-gnome network-manager-pptp network-manager-pptp-gnome network-manager-vpnc network-manager-vpnc-gnome \
-    network-manager-openconnect network-manager-openconnect-gnome \
-    build-essential \
-    software-properties-common \
-    git \
-    unrar \
-    gcc \
-    make \
-    curl \
-    htop \
-    vim \
-    tcptrack \
-    lnav
+    # ------------------------------------ Install Tools ------------------------------------
+    apt install -yq --fix-missing \
+        net-tools \
+        network-manager-openvpn-gnome network-manager-pptp network-manager-pptp-gnome network-manager-vpnc network-manager-vpnc-gnome \
+        network-manager-openconnect network-manager-openconnect-gnome \
+        build-essential \
+        software-properties-common \
+        git \
+        unrar \
+        gcc \
+        make \
+        curl \
+        htop \
+        vim \
+        tcptrack \
+        lnav \
+        guake
 # ------------------------------------ Install & config DNS ------------------------------------
 apt install -y resolvconf &&
 
-# Stop systemd-resolved to avoid overwrite resolv.conf file
-systemctl stop systemd-resolved && 
+    # Stop systemd-resolved to avoid overwrite resolv.conf file
+    systemctl stop systemd-resolved &&
 
-# Disable systemd-resolved
-systemctl disable systemd-resolved &&
+    # Disable systemd-resolved
+    systemctl disable systemd-resolved &&
 
-# Set "Google" DNS addresses
-echo nameserver 8.8.8.8 > /etc/resolvconf/resolv.conf.d/tail && 
-echo nameserver 4.2.2.4 >> /etc/resolvconf/resolv.conf.d/tail &&
+    # Set "Google" DNS addresses
+    echo nameserver 8.8.8.8 >/etc/resolvconf/resolv.conf.d/tail &&
+    echo nameserver 4.2.2.4 >>/etc/resolvconf/resolv.conf.d/tail &&
 
-# Make DNS addresses permanent
-resolvconf -u
+    # Make DNS addresses permanent
+    resolvconf -u
 # ------------------------------------ Install Docker CE ---------------------------------------
 # Install packages to allow apt to use a repository over HTTPS
 apt install -y \
     apt-transport-https \
     ca-certificates \
-    gnupg-agent \
+    gnupg-agent
 
 # Add Docker’s official GPG key
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && 
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - &&
 
-# Add Docker stable repository
-add-apt-repository -y \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+    # Add Docker stable repository
+    add-apt-repository -y \
+        "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable" &&
-   
-apt update -y &&
-apt install -y docker-ce docker-ce-cli containerd.io &&
+    apt update -y &&
+    apt install -y docker-ce docker-ce-cli containerd.io &&
 
-# Run docker without sudo
-usermod -aG docker $USER &&
-sudo setfacl -m user:$USER:rw /var/run/docker.sock &&
+    # Run docker without sudo
+    usermod -aG docker $USER &&
+    sudo setfacl -m user:$USER:rw /var/run/docker.sock &&
 
-# ------------------------------------ Install Docker-Compose ------------------------------------
-curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose &&
+    # ------------------------------------ Install Docker-Compose ------------------------------------
+    curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose &&
+    chmod +x /usr/local/bin/docker-compose &&
 
-chmod +x /usr/local/bin/docker-compose &&
-
-# Install command completion
-curl -L https://raw.githubusercontent.com/docker/compose/1.23.2/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
+    # Install command completion
+    curl -L https://raw.githubusercontent.com/docker/compose/1.23.2/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 # ------------------------------------ Install zsh ----------------------------------------------
 echo 'Install oh-my-zsh'
 echo '-----------------'

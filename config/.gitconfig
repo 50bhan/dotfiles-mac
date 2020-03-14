@@ -1,11 +1,14 @@
 [user]
+
 	name = 50bhan
 	email = Sobhan.Sharifi.Sadeghi@gmail.com
 
 [github]
+
 	user = 50bhan
 
 [credential]
+
 	helper = store
 
 [apply]
@@ -99,6 +102,7 @@
 
 	# https://git-scm.com/docs/git-config#git-config-pushdefault
 	default = simple
+	
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
 
