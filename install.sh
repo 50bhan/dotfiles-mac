@@ -21,7 +21,8 @@ apt clean && apt update -y && apt upgrade -y &&
         vim \
         tcptrack \
         lnav \
-        guake
+        guake \
+        smem
 # ------------------------------------ Install & config DNS ------------------------------------
 apt install -y resolvconf &&
 
