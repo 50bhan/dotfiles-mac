@@ -118,6 +118,12 @@
 
 	lgp = lg -p
 
+	unstage = reset --
+	
+	discard = checkout --
+	
+	staged = diff --cached
+
 	# Show the diff between the latest commit and the current state
 	df = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
 
@@ -128,10 +134,10 @@
 	amend = commit --amend --reuse-message=HEAD
 
 	# Pull in remote changes for the current repository and all its submodules
-	pl = git pull --recurse-submodules
+	pull = git pull --recurse-submodules
 
-	# Show verbose output about tags, branches or remotes
+	# Show verbose output
 	tags = tag -l
 	branches = branch -a
 	remotes = remote -v
-	
+	stashes = stash list

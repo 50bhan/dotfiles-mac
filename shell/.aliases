@@ -47,6 +47,9 @@ alias SPEED="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/maste
 alias DOCKER-STATS='docker stats --no-stream --format "table {{.Name}}\t{{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}" | sort -k 4 -h'
 alias DOCKER-CLEAR-LOGS="echo -e 'truncate -s 0 /var/lib/docker/containers/*/*-json.log' | sudo -i"
 
+# Memory Usage
+alias MEM-CHROME='smem -tk -P /opt/google/chrome'
+
 # Miscellaneous
 alias RF="rm -rf"
 alias PATH='echo -e ${PATH//:/\\n}'
