@@ -56,23 +56,40 @@ alias dex="docker exec -it"
 
 # This command is a neat shell pipeline to stop all running containers no matter
 # where you are and without knowing any container names
-alias dsa="docker ps -q | awk '{print $1}' | xargs -o docker stop"
+alias dkill="docker ps -q | awk '{print $1}' | xargs -o docker stop"
+
+alias dco='docker-compose'
+
+# Start the docker-compose stack in the current directory
+alias dcup='docker-compose up'
+alias dcupd='docker-compose up -d'
+
+# Build the images in current directory
+alias dcb='docker-compose build'
+
+# Start the docker-compose stack in the current directory and rebuild the images
+alias dcupdb="docker-compose up -d --build"
+
+alias dce='docker-compose exec'
+
+alias dcps='docker-compose ps'
+
+alias dcpull='docker-compose pull'
 
 # Show the logs for the docker-compose stack in the current directory
 # May be extended with the service name to get service-specific logs, like
 # 'dcl php' to get the logs of the php container
-alias dcl="docker-compose logs"
+alias dcl='docker-compose logs'
 
-# Start the docker-compose stack in the current directory
-alias dcu="docker-compose up -d"
+alias dclf='docker-compose logs -f'
 
-# Start the docker-compose stack in the current directory and rebuild the images
-alias dcub="docker-compose up -d --build"
-
-# Stop, delete (down) or restart the docker-compose stack in the current directory
-alias dcs="docker-compose stop"
-alias dcd="docker-compose down"
-alias dcr="docker-compose restart"
+# Run, stop, delete or restart the docker-compose stack in the current directory
+alias dcrun='docker-compose run'
+alias dcstop="docker-compose stop"
+alias dcdown="docker-compose down"
+alias dcstart='docker-compose start'
+alias dcrestart="docker-compose restart"
+alias dcrm='docker-compose rm'
 -------------------------------------------------------------------------------------------
 # Memory Usage
 alias MEM-CHROME='smem -tk -P /opt/google/chrome'
