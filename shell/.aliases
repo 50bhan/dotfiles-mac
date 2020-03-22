@@ -47,7 +47,20 @@ alias SPEED="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/maste
 alias DOCKER-STATS='docker stats --no-stream --format "table {{.Name}}\t{{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}" | sort -k 4 -h'
 alias DOCKER-CLEAR-LOGS="echo -e 'truncate -s 0 /var/lib/docker/containers/*/*-json.log' | sudo -i"
 alias DOCKER-NSLOOKUP="docker run busybox nslookup google.com"
-alias docker ls='$ docker ps --format "table {{.Names}}\t{{.Ports}}"'
+
+# Displays the currently running containers (Minimal)
+alias dps='docker ps --format "table {{.Names}}\t{{.Ports}}"'
+
+# Start the docker-compose stack in the current directory
+alias dcu="docker-compose up -d"
+
+# Start the docker-compose stack in the current directory and rebuild the images
+alias dcub="docker-compose up -d --build"
+
+# Stop, delete (down) or restart the docker-compose stack in the current directory
+alias dcs="docker-compose stop"
+alias dcd="docker-compose down"
+alias dcr="docker-compose restart"
 
 # Memory Usage
 alias MEM-CHROME='smem -tk -P /opt/google/chrome'
