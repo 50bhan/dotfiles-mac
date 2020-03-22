@@ -43,12 +43,12 @@ alias IP-LIST="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo
 alias IP-LOCATION="curl ipinfo.io"
 alias SPEED="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 
-# Docker
+# ---------------------------------------- Docker ----------------------------------------
 alias DOCKER-STATS='docker stats --no-stream --format "table {{.Name}}\t{{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}" | sort -k 4 -h'
 alias DOCKER-CLEAR-LOGS="echo -e 'truncate -s 0 /var/lib/docker/containers/*/*-json.log' | sudo -i"
 alias DOCKER-NSLOOKUP="docker run busybox nslookup google.com"
 
-# Displays the currently running containers (Minimal)
+# Displays the currently running containers (Minimal output)
 alias dps='docker ps --format "table {{.Names}}\t{{.Ports}}"'
 
 # Start the docker-compose stack in the current directory
@@ -61,7 +61,7 @@ alias dcub="docker-compose up -d --build"
 alias dcs="docker-compose stop"
 alias dcd="docker-compose down"
 alias dcr="docker-compose restart"
-
+-------------------------------------------------------------------------------------------
 # Memory Usage
 alias MEM-CHROME='smem -tk -P /opt/google/chrome'
 
