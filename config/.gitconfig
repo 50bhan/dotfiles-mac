@@ -46,7 +46,7 @@
 	
 	autocrlf = input
 
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = less --tabs=4 -RFX
 
 [color]
 
@@ -69,14 +69,14 @@
 
 [color "status"]
 
-	added = yellow
-	changed = green
+	added = green
+	changed = red
 	untracked = cyan
 
 [commit]
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
+	#gpgsign = true
 
 [diff]
 
@@ -112,7 +112,7 @@
 
 	sts = status -sb
 
-	cm = commit -av
+	cm = commit -v
 
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
@@ -123,6 +123,8 @@
 	discard = checkout --
 	
 	staged = diff --cached
+
+	squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-🎉 First commit}\");};f"
 
 	# Show the diff between the latest commit and the current state
 	df = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
@@ -141,3 +143,4 @@
 	branches = branch -a
 	remotes = remote -v
 	stashes = stash list
+	
