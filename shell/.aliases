@@ -48,8 +48,8 @@ alias DOCKER-STATS='docker stats --no-stream --format "table {{.Name}}\t{{.Conta
 alias DOCKER-CLEAR-LOGS="echo -e 'truncate -s 0 /var/lib/docker/containers/*/*-json.log' | sudo -i"
 alias DOCKER-NSLOOKUP="docker run busybox nslookup google.com"
 
-# Displays the currently running containers (Minimal output)
-alias dps='docker ps --format "table {{.Names}}\t{{.Ports}}"'
+# List all containers using custom format
+alias dps='docker ps --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}"'
 
 # Quickly run the docker exec command like this: 'dex container-name bash'
 alias dex="docker exec -it"
