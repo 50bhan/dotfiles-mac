@@ -114,15 +114,25 @@
 
 	cm = commit -v
 
+  	wip = !git add -u && git commit -m "WIP"
+
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 	lgp = lg -p
 
 	unstage = reset --
 	
+	undo = reset HEAD~1 --mixed
+
 	discard = checkout --
 	
 	staged = diff --cached
+
+	bclean = !"git branch | grep -ve " master$" | xargs git branch -D"
+
+	new = !"git log $1@{1}..$1@{0} "$@""
+
+	sync-fork = !git fetch upstream && git checkout master && git merge upstream/master && git push
 
 	squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-🎉 First commit}\");};f"
 
