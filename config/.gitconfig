@@ -128,12 +128,19 @@
 	
 	staged = diff --cached
 
+	# Remove all local branches except master
 	bclean = !"git branch | grep -ve " master$" | xargs git branch -D"
 
+	# Update local branch list with all new ones from the remote and remove any that are no longer there
+	bupdate= !"git remote update --prune"
+
+	# List all of the commits after current user latest commit
 	new = !"git log $1@{1}..$1@{0} "$@""
 
+	# Sync a fork with latest changes on upstream
 	sync-fork = !git fetch upstream && git checkout master && git merge upstream/master && git push
 
+	# Squash all git commits into one single commit
 	squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-🎉 First commit}\");};f"
 
 	# Show the diff between the latest commit and the current state
