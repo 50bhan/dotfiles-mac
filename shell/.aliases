@@ -51,12 +51,14 @@ alias DOCKER-NSLOOKUP="docker run busybox nslookup google.com"
 # List all containers using custom format
 alias dps='docker ps --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}"'
 
+# Stop all running containers
+alias dkill="docker kill $(docker ps -q)"
+
+# Remove all containers
+alias dclean="docker rm $(docker ps -a -q)"
+
 # Quickly run the docker exec command like this: 'dex container-name bash'
 alias dex="docker exec -it"
-
-# This command is a neat shell pipeline to stop all running containers no matter
-# where you are and without knowing any container names
-alias dkill="docker ps -q | awk '{print $1}' | xargs -o docker stop"
 
 alias dco='docker-compose'
 
