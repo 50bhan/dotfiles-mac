@@ -1,7 +1,7 @@
 export PATH=${PATH}:$HOME/.config/composer/vendor/bin
 export PATH=${PATH}:$HOME/symfony/bin
 
-# ---------------------------- Golang ----------------------------
+# Golang
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
 
@@ -10,4 +10,6 @@ export PATH=$PATH:$GOPATH
 
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
-# ----------------------------------------------------------------
+
+# Composer
+export PATH=$PATH:$HOME/.composer/vendor/bin

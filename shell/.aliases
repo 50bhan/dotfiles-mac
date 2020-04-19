@@ -43,7 +43,7 @@ alias IP-LIST="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo
 alias IP-LOCATION="curl ipinfo.io"
 alias SPEED="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 
-# ---------------------------------------- Docker ----------------------------------------
+# Docker
 alias DOCKER-STATS='docker stats --no-stream --format "table {{.Name}}\t{{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}" | sort -k 4 -h'
 alias DOCKER-CLEAR-LOGS="echo -e 'truncate -s 0 /var/lib/docker/containers/*/*-json.log' | sudo -i"
 alias DOCKER-NSLOOKUP="docker run busybox nslookup google.com"
@@ -92,7 +92,7 @@ alias dcdown="docker-compose down"
 alias dcstart='docker-compose start'
 alias dcrestart="docker-compose restart"
 alias dcrm='docker-compose rm'
--------------------------------------------------------------------------------------------
+
 # Memory Usage
 alias MEM-CHROME='smem -tk -P /opt/google/chrome'
 
