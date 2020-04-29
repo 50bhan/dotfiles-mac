@@ -22,16 +22,27 @@ apt clean && apt update -y && apt upgrade -y &&
         tcptrack \
         lnav \
         guake \
-        smem
+        smem \
+        mysql-server
 
-# ------------------------------------ PHP ------------------------------------
-sudo add-apt-repository ppa:ondrej/php
+# ------------------------------------ Install PHP and Extentions ------------------------------------
+add-apt-repository -y ppa:ondrej/php
 
-sudo apt-get update
-
-sudo apt -y install php7.4
-
-apt install php-xdebug php7.4-bcmath php7.4-curl php7.4-gd php7.4-intl php7.4-json php7.4-mbstring php7.4-mysql php7.4-opcache php7.4-sqlite3 php7.4-xml php7.4-zip
+apt update -y &&
+    apt install -yq --fix-missing \
+        php7.4 \
+        php-xdebug \
+        php7.4-bcmath \
+        php7.4-curl \
+        php7.4-gd \
+        php7.4-intl \
+        php7.4-json \
+        php7.4-mbstring \
+        php7.4-mysql \
+        php7.4-opcache \
+        php7.4-sqlite3 \
+        php7.4-xml \
+        php7.4-zip
 
 # ------------------------------------ Install & config DNS ------------------------------------
 apt install -y resolvconf &&
