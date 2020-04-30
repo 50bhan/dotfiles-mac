@@ -117,6 +117,10 @@ php composer-setup.php
 php -r "unlink('composer-setup.php');"
 mv composer.phar /usr/local/bin/composer
 
+echo 'Install PHP CS Fixer'
+echo '--------------------'
+composer global require friendsofphp/php-cs-fixer
+
 echo '++++++++++++++++++++++++++++++'
 echo 'All done!'
 echo '++++++++++++++++++++++++++++++'
