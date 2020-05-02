@@ -109,6 +109,9 @@ ln -s $HOME/.dotfiles/shell/.vimrc $HOME/.vimrc
 rm $HOME/.vim
 ln -s $HOME/.dotfiles/shell/.vim $HOME/.vim
 
+# Symlink php-cs-fixer rules
+ln -s $HOME/.dotfiles/config/php-cs-fixer/.php_cs.dist $HOME/.custom/.php_cs.dist
+
 echo 'Install composer'
 echo '----------------'
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
