@@ -130,10 +130,8 @@ echo '-----------------'
 wget -q -O - https://packages.blackfire.io/gpg.key | apt-key add -
 echo "deb http://packages.blackfire.io/debian any main" | tee /etc/apt/sources.list.d/blackfire.list
 apt update
-
 apt install blackfire-agent
 /etc/init.d/blackfire-agent restart
-
 apt install blackfire-php
 # blackfire config --client-id= --client-token=
 
