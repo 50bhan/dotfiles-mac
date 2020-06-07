@@ -21,6 +21,7 @@ apt clean && apt update -y && apt upgrade -y &&
         vim \
         tcptrack \
         lnav \
+        jq \
         guake \
         smem \
         mysql-server
