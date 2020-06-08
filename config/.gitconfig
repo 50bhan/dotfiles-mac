@@ -128,6 +128,9 @@
 	
 	staged = diff --cached
 
+	# Create new branch
+	new = !"git checkout -b $2"
+	
 	# Remove all local branches except master
 	bclean = !"git branch | grep -ve " master$" | xargs git branch -D"
 
@@ -135,7 +138,7 @@
 	bupdate= !"git remote update --prune"
 
 	# List all of the commits after current user latest commit
-	new = !"git log $1@{1}..$1@{0} "$@""
+	after = !"git log $1@{1}..$1@{0} "$@""
 
 	# Sync a fork with latest changes on upstream
 	sync-fork = !git fetch upstream && git checkout master && git merge upstream/master && git push
