@@ -26,6 +26,10 @@ apt clean && apt update -y && apt upgrade -y &&
         smem \
         mysql-server
 
+# ---------------------------------------- Install some tools ----------------------------------------
+# LazyDocker (A simple terminal UI for both docker and docker-compose)
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+
 # ------------------------------------ Install PHP and Extentions ------------------------------------
 add-apt-repository -y ppa:ondrej/php
 
