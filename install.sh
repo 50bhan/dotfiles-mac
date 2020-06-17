@@ -130,6 +130,14 @@ echo 'Install PHP CS Fixer'
 echo '--------------------'
 composer global require friendsofphp/php-cs-fixer
 
+echo 'Install PHP Code Sniffer'
+echo '------------------------'
+composer global require "squizlabs/php_codesniffer=*"
+
+echo 'Install PHP Mess Detector'
+echo '-------------------------'
+composer global require "phpmd/phpmd=@stable"
+
 echo 'Install Blackfire'
 echo '-----------------'
 wget -q -O - https://packages.blackfire.io/gpg.key | apt-key add -
