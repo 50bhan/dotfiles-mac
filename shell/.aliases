@@ -100,3 +100,5 @@ alias MEM-CHROME='smem -tk -P /opt/google/chrome'
 alias RF="rm -rf"
 alias PATH='echo -e ${PATH//:/\\n}'
 alias grip="grip -b"
+alias FIND="find . -name $2"
+alias SIZE="du -sch ./*"
