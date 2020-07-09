@@ -52,10 +52,13 @@ alias DOCKER-NSLOOKUP="docker run busybox nslookup google.com"
 alias dps='docker ps --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}"'
 
 # Stop all running containers
-alias dkill="docker kill $(docker ps -q)"
+alias dkill='docker kill $(docker ps -q)'
 
 # Remove all containers
-alias dclean="docker rm $(docker ps -a -q)"
+alias dclean='docker rm $(docker ps -aq)'
+
+# Remove all stopped containers, all networks not used by at least one container, all dangling images and all dangling build cache
+alias dprune="docker system prune"
 
 # Quickly run the docker exec command like this: 'dex container-name bash'
 alias dex="docker exec -it"
