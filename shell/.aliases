@@ -5,6 +5,7 @@ alias SSH="vim ~/.ssh/config"
 alias RELOAD="source ~/.zshrc"
 
 # Management
+alias sudo='sudo '
 alias SERVICES="sudo netstat -plunt"
 alias GROUPS="compgen -g"
 alias USERS="cut -d: -f1 /etc/passwd"
