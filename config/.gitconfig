@@ -131,6 +131,9 @@
 	# Create new branch
 	new = !"git checkout -b $2"
 	
+	# Stash current changes and checkout to target branch
+	change = !"git stash && git switch $2"
+
 	# Remove all local branches except master
 	bclean = !"git branch | grep -ve " master$" | xargs git branch -D"
 
