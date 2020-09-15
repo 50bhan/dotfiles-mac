@@ -5,6 +5,7 @@ export PATH=${PATH}:$HOME/symfony/bin
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
 
+# Set this path based on your Golang projects directory
 export GOPATH="$HOME/.golang"
 export PATH=$PATH:$GOPATH
 
