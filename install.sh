@@ -35,7 +35,8 @@ add-apt-repository -y ppa:ondrej/php
 
 apt update -y &&
     apt install -yq --fix-missing \
-        php7.4 \
+        php7.4-cli \
+        php7.4-fpm \
         php-xdebug \
         php7.4-bcmath \
         php7.4-curl \
