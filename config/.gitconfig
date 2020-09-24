@@ -166,4 +166,3 @@
 	branches = branch -a
 	remotes = remote -v
 	stashes = stash list
-	
