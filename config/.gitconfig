@@ -126,6 +126,9 @@
 
 	discard = checkout -- .
 	
+	# Exclude files in local repository
+	exclude = ! echo $2 >> .git/info/exclude
+
 	staged = diff --cached
 
 	# Create new branch
