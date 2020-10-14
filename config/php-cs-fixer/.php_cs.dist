@@ -65,5 +65,6 @@ return PhpCsFixer\Config::create()
         'php_unit_set_up_tear_down_visibility' => true,
         'standardize_not_equals' => true,
         'ternary_operator_spaces' => true,
+        'yoda_style' => ['equal' => false, 'identical' => false],
     ])
     ->setFinder($finder);
