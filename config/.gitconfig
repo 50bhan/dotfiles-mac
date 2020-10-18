@@ -153,7 +153,7 @@
 	squash-all = "!f(){ git reset $(git commit-tree HEAD^{tree} -m \"${1:-🎉 First commit}\");};f"
 
 	# Show the diff between the latest commit and the current state
-	df = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+	df = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat --color-moved"
 
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
 	dfi = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
