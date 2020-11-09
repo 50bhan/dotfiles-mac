@@ -111,3 +111,6 @@ for file in ~/.dotfiles/shell/.{exports,aliases,functions}; do
 	[ -r "$file" ] && [ -f "$file" ] && source "$file"
 done
 unset file
+
+# The fuck alias
+eval $(thefuck --alias)

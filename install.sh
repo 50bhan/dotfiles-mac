@@ -12,6 +12,9 @@ apt clean && apt update -y && apt upgrade -y &&
         network-manager-openconnect network-manager-openconnect-gnome \
         build-essential \
         software-properties-common \
+        python3-dev \
+        python3-pip \
+        python3-setuptools \
         git \
         unrar \
         gcc \
@@ -29,6 +32,9 @@ apt clean && apt update -y && apt upgrade -y &&
 # ---------------------------------------- Install some tools ----------------------------------------
 # LazyDocker (A simple terminal UI for both docker and docker-compose)
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+
+# The Fuck is a magnificent app, that corrects errors in previous console commands.
+pip3 install thefuck
 
 # ------------------------------------ Install PHP and Extentions ------------------------------------
 add-apt-repository -y ppa:ondrej/php
