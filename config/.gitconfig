@@ -114,6 +114,10 @@
 
 	cm = commit -v
 
+	initial = !git add . && git commit -m \"${1:-🎉 First commit}\"
+
+	first = log --pretty='%C(yellow)commit %H%nDate:\t%ad%nAuthor: %an <%ae>%n%n\t%s' --max-parents=0
+
   	wip = !git add -u && git commit -m "WIP"
 
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
@@ -123,6 +127,8 @@
 	unstage = reset --
 	
 	undo = reset HEAD~1 --mixed
+
+	undo-initial = !git update-ref -d HEAD && git rm --cached -r .
 
 	discard = checkout -- .
 	
@@ -138,10 +144,10 @@
 	change = !"git stash && git switch $2"
 
 	# Remove all local branches except master
-	bclean = !"git branch | grep -ve " master$" | xargs git branch -D"
+	clean-branches = !"git branch | grep -ve " master$" | xargs git branch -D"
 
 	# Update local branch list with all new ones from the remote and remove any that are no longer there
-	bupdate= !"git remote update --prune"
+	update-branches= !"git remote update --prune"
 
 	# List all of the commits after current user latest commit
 	after = !"git log $1@{1}..$1@{0} "$@""
