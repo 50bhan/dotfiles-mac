@@ -39,22 +39,7 @@ pip3 install thefuck
 # ------------------------------------ Install PHP and Extentions ------------------------------------
 add-apt-repository -y ppa:ondrej/php
 
-apt update -y &&
-    apt install -yq --fix-missing \
-        php7.4-cli \
-        php7.4-fpm \
-        php-xdebug \
-        php7.4-bcmath \
-        php7.4-curl \
-        php7.4-gd \
-        php7.4-intl \
-        php7.4-json \
-        php7.4-mbstring \
-        php7.4-mysql \
-        php7.4-opcache \
-        php7.4-sqlite3 \
-        php7.4-xml \
-        php7.4-zip
+sudo apt update -y && sudo apt install -yq --fix-missing php8.0-{common,cli,fpm,bcmath,curl,gd,intl,mbstring,readline,mysql,opcache,sqlite3,xml,zip,xdebug}
 
 # ------------------------------------ Install & config DNS ------------------------------------
 apt install -y resolvconf &&
