@@ -39,7 +39,11 @@ pip3 install thefuck
 # ------------------------------------ Install PHP and Extentions ------------------------------------
 add-apt-repository -y ppa:ondrej/php
 
-sudo apt update -y && sudo apt install -yq --fix-missing php8.0-{common,cli,fpm,bcmath,curl,gd,intl,mbstring,readline,mysql,opcache,sqlite3,xml,zip,xdebug}
+# It's recommended to install xdebug after other extensions. This way you don't need manual
+#     config and package manager will create config files for cli and fpm.
+apt update -y && \
+apt install -yq --fix-missing php8.0-{common,cli,fpm,bcmath,curl,gd,intl,mbstring,readline,mysql,opcache,sqlite3,xml,zip} && \
+apt install -yq --fix-missing php8.0-xdebug
 
 # ------------------------------------ Install & config DNS ------------------------------------
 apt install -y resolvconf &&
