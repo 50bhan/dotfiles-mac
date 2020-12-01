@@ -45,6 +45,10 @@ apt update -y && \
 apt install -yq --fix-missing php8.0-{common,cli,fpm,bcmath,curl,gd,intl,mbstring,readline,mysql,opcache,sqlite3,xml,zip} && \
 apt install -yq --fix-missing php8.0-xdebug
 
+# Enable FPM module on apache
+a2enmod proxy_fcgi setenvif
+a2enconf php8.0-fpm
+
 # ------------------------------------ Install & config DNS ------------------------------------
 apt install -y resolvconf &&
 
