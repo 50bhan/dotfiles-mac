@@ -49,6 +49,9 @@ apt install -yq --fix-missing php8.0-xdebug
 a2enmod proxy_fcgi setenvif
 a2enconf php8.0-fpm
 
+# Configuration for Xdebug 3
+/bin/cp -rf config/php/* /etc/php/7.4/cli/conf.d
+
 # ------------------------------------ Install & config DNS ------------------------------------
 apt install -y resolvconf &&
 
