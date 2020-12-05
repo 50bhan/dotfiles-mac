@@ -50,7 +50,7 @@ a2enmod proxy_fcgi setenvif
 a2enconf php8.0-fpm
 
 # Configuration for Xdebug 3
-/bin/cp -rf config/php/* /etc/php/7.4/cli/conf.d
+/bin/cp -rf config/php/* /etc/php/8.0/mods-available/
 
 # ------------------------------------ Install & config DNS ------------------------------------
 apt install -y resolvconf &&
