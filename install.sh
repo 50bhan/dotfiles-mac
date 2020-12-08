@@ -141,6 +141,10 @@ echo 'Install PHP Mess Detector'
 echo '-------------------------'
 composer global require "phpmd/phpmd=@stable"
 
+echo 'Install Psalm'
+echo '-------------------------'
+composer global require "viemo/psalm"
+
 echo 'Install Blackfire'
 echo '-----------------'
 wget -q -O - https://packages.blackfire.io/gpg.key | apt-key add -
