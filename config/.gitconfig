@@ -132,6 +132,9 @@
 
 	discard = checkout -- .
 	
+	# Remove untracked files and directories from the working tree
+	pristine = clean -fd
+
 	# Exclude files in local repository
 	exclude = ! echo $2 >> .git/info/exclude
 
