@@ -29,6 +29,16 @@ apt clean && apt update -y && apt upgrade -y &&
         smem \
         mysql-server
 
+# ------------------------------------------ Set Up SSH Keys -----------------------------------------
+ssh-keygen -t rsa -b 4096 -C "sobhan.sharifi.sadeghi@gmail.com"
+
+# Make private key readable only for owner
+chmod 400 ~/.ssh/id_rsa
+
+# Add private key to the authentication agent (ssh-agent), so that the ssh agent can take care of the
+#   authentication for you, and you don’t have type in passwords at the terminal.
+ssh-add ~/.ssh/id_rsa
+
 # ---------------------------------------- Install some tools ----------------------------------------
 # LazyDocker (A simple terminal UI for both docker and docker-compose)
 curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
