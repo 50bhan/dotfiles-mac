@@ -186,6 +186,9 @@
 	#              commits you have made on this branch that haven't been pushed.
 	pull-force = !sh -c \"git reset --hard origin/$(git rev-parse --abbrev-ref HEAD)\"
 
+	# Push all local branches and tags to remote
+	push-all = push --all origin
+	
 	# Given a merge commit, find the span of commits that exist(ed) on that branch.
 	merge-span = "!f() { echo $(git log -1 $2 --merges --pretty=format:%P | cut -d' ' -f1)$1$(git log -1 $2 --merges --pretty=format:%P | cut -d' ' -f2); }; f"
 
