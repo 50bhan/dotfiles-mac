@@ -1,5 +1,5 @@
 # System
-alias ALIAS="vim ~/.bash_aliases"
+alias ALIAS="vim ~/.dotfiles/shell/.aliases"
 alias UPDATE="sudo apt update && sudo apt upgrade -y"
 alias SSH="vim ~/.ssh/config"
 alias RELOAD="source ~/.zshrc"
