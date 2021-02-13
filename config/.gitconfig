@@ -118,7 +118,7 @@
 
 	first = log --pretty='%C(yellow)commit %H%nDate:\t%ad%nAuthor: %an <%ae>%n%n\t%s' --max-parents=0
 
-  	wip = !git add -u && git commit -m "WIP"
+  	wip = !git add . && git commit -m "WIP"
 
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
@@ -200,6 +200,6 @@
 
 	# Show verbose output
 	tags = tag -l
-	branches = branch -a
+	branches = "!git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD) %(refname:short) %(color:green)%(committerdate:relative) %(color:blue)%(subject) %(color:magenta)%(authorname)%(color:reset)'"
 	remotes = remote -v
 	stashes = stash list
