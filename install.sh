@@ -142,10 +142,18 @@ composer global require friendsofphp/php-cs-fixer
 echo 'Install PHP Code Sniffer'
 echo '------------------------'
 composer global require "squizlabs/php_codesniffer=*"
+composer global require "slevomat/coding-standard"
 
 echo 'Install PHP Mess Detector'
 echo '-------------------------'
 composer global require "phpmd/phpmd=@stable"
+
+echo 'Install PHPStan'
+echo '-------------------------'
+composer global require "phpstan/phpstan"
+composer global require "phpstan/phpstan-strict-rules"
+composer global require "ergebnis/phpstan-rules"
+composer global require "thecodingmachine/phpstan-strict-rules"
 
 echo 'Install Psalm'
 echo '-------------------------'
