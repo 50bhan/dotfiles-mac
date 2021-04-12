@@ -46,6 +46,9 @@ curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/i
 # The Fuck is a magnificent app, that corrects errors in previous console commands.
 pip3 install thefuck
 
+# A command-line tool and library for generating regular expressions from user-provided test cases.
+brew install grex
+
 # ------------------------------------ Install PHP and Extentions ------------------------------------
 add-apt-repository -y ppa:ondrej/php
 
@@ -64,6 +67,17 @@ a2enconf php8.0-fpm
 
 # Install VLD
 pecl install channel://pecl.php.net/vld-0.17.1
+
+# Install Kafka extenstion
+git clone --depth 1 --branch v1.5.0 https://github.com/edenhill/librdkafka.git \
+    && ( \
+        cd librdkafka \
+        && ./configure \
+        && make \
+        && make install \
+    ) \
+    && pecl install rdkafka #\
+    # && echo "extension=rdkafka.so" > /usr/local/etc/php/8.0/conf.d/rdkafka.ini
 
 # ------------------------------------ Install & config DNS ------------------------------------
 apt install -y resolvconf &&
