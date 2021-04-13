@@ -158,6 +158,9 @@
 	# List all of the commits after current user latest commit
 	after = !"git log $1@{1}..$1@{0} "$@""
 
+	# Fetch all branches from all remotes and clean outdated branches
+	sync = fetch --all --prune
+
 	# Sync a fork with latest changes on upstream
 	sync-fork = !git fetch upstream && git checkout master && git merge upstream/master && git push
 
@@ -200,6 +203,6 @@
 
 	# Show verbose output
 	tags = tag -l
-	branches = "!git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD) %(refname:short) %(color:green)%(committerdate:relative) %(color:blue)%(subject) %(color:magenta)%(authorname)%(color:reset)'"
+	branches = "!git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD) %(refname:short) %(color:green)%(committerdate:relative) %(color:yellow)%(subject) %(color:magenta)%(authorname)%(color:reset)'"
 	remotes = remote -v
 	stashes = stash list
