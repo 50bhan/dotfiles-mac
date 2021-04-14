@@ -452,7 +452,18 @@
     <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
     <rule ref="Generic.Functions.CallTimePassByReference"/>
     <rule ref="Generic.PHP.DeprecatedFunctions"/>
-    <rule ref="Generic.PHP.ForbiddenFunctions"/>
+    <rule ref="Generic.PHP.ForbiddenFunctions">
+        <properties>
+            <property name="forbiddenFunctions" type="array">
+                <element key="dump" value="null"/>
+                <element key="var_dump" value="null"/>
+                <element key="dd" value="null"/>
+                <element key="ddd" value="null"/>
+                <element key="c" value="null"/>
+                <element key="cc" value="null"/>
+            </property>
+        </properties>
+    </rule>
     <rule ref="PSR12.Functions.NullableTypeDeclaration"/>
     <rule ref="SlevomatCodingStandard.Functions.StaticClosure"/>
     <rule ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure"/>
