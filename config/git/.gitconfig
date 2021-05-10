@@ -11,6 +11,11 @@
 
 	helper = store
 
+[init]
+
+		# Default name of new branches (instead of master)
+        defaultBranch = main
+
 [apply]
 
 	# Detect whitespace errors when applying a patch

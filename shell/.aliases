@@ -64,38 +64,38 @@ alias dprune="docker system prune"
 # Quickly run the docker exec command like this: 'dex container-name bash'
 alias dex="docker exec -it"
 
-alias dco='docker-compose'
+alias dco='docker compose'
 
-# Start the docker-compose stack in the current directory
-alias dcup='docker-compose up'
-alias dcupd='docker-compose up -d'
+# Start the docker compose stack in the current directory
+alias dcup='docker compose up'
+alias dcupd='docker compose up -d'
 
 # Build the images in current directory
-alias dcb='docker-compose build'
+alias dcb='docker compose build'
 
-# Start the docker-compose stack in the current directory and rebuild the images
-alias dcupdb="docker-compose up -d --build"
+# Start the docker compose stack in the current directory and rebuild the images
+alias dcupdb="docker compose up -d --build"
 
-alias dce='docker-compose exec'
+alias dce='docker compose exec'
 
-alias dcps='docker-compose ps'
+alias dcps='docker compose ps'
 
-alias dcpull='docker-compose pull'
+alias dcpull='docker compose pull'
 
-# Show the logs for the docker-compose stack in the current directory
+# Show the logs for the docker compose stack in the current directory
 # May be extended with the service name to get service-specific logs, like
 # 'dcl php' to get the logs of the php container
-alias dcl='docker-compose logs'
+alias dcl='docker compose logs'
 
-alias dclf='docker-compose logs -f'
+alias dclf='docker compose logs -f'
 
-# Run, stop, delete or restart the docker-compose stack in the current directory
-alias dcrun='docker-compose run'
-alias dcstop="docker-compose stop"
-alias dcdown="docker-compose down"
-alias dcstart='docker-compose start'
-alias dcrestart="docker-compose restart"
-alias dcrm='docker-compose rm'
+# Run, stop, delete or restart the docker compose stack in the current directory
+alias dcrun='docker compose run'
+alias dcstop="docker compose stop"
+alias dcdown="docker compose down"
+alias dcstart='docker compose start'
+alias dcrestart="docker compose restart"
+alias dcrm='docker compose rm'
 
 # Memory Usage
 alias MEM-CHROME='smem -tk -P /opt/google/chrome'
