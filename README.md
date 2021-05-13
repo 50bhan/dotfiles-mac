@@ -1,4 +1,4 @@
-# Sobhan's Dotfiles
+# Sobhan's Dotfiles (Mac-OS)
 
 You can install dotfiles by cloning the repository as `.dotfiles` in your home directory and running the bootstrap script.
 
