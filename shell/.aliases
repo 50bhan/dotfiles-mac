@@ -43,6 +43,7 @@ alias IP="dig +short myip.opendns.com @resolver1.opendns.com"
 alias IP-LIST="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias IP-LOCATION="curl ipinfo.io"
 alias SPEED="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
+alias PORTS=lsof -i -P | grep LISTEN
 
 # Docker
 alias DOCKER-STATS='docker stats --no-stream --format "table {{.Name}}\t{{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}" | sort -k 4 -h'
