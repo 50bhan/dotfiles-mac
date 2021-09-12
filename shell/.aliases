@@ -51,7 +51,8 @@ alias DOCKER-CLEAR-LOGS="echo -e 'truncate -s 0 /var/lib/docker/containers/*/*-j
 alias DOCKER-NSLOOKUP="docker run busybox nslookup google.com"
 
 # List all containers using custom format
-alias dps='docker ps --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}"'
+alias dps='docker ps --format "table {{.Names}}\t{{.Status}}"'
+alias dpsp='docker ps --format "table {{.Names}}\t{{.Ports}}\t{{.Status}}"'
 
 # Stop all running containers
 alias dkill='docker kill $(docker ps -q)'
