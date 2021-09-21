@@ -141,6 +141,8 @@
 	undo-initial = !git update-ref -d HEAD && git rm --cached -r .
 
 	discard = checkout -- .
+
+	discard-submodules = !git submodule deinit -f . && git submodule update --init
 	
 	# Remove untracked files and directories from the working tree
 	pristine = clean -fd
