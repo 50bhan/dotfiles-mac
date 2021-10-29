@@ -116,6 +116,15 @@
 	# Make rebasing the default strategy
 	rebase = true
 
+[init]
+	
+	defaultBranch = main
+
+[remote "origin"]
+
+	# Cleans out your local git from tracking branches that don't exist anymore.
+	prune = true
+
 [alias]
 
 	st = status
@@ -142,6 +151,7 @@
 
 	discard = checkout -- .
 
+	# Discard all changes from current repo and its submodules
 	discard-submodules = !git submodule deinit -f . && git submodule update --init
 	
 	# Remove untracked files and directories from the working tree
