@@ -46,9 +46,9 @@ curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/i
 # The Fuck is a magnificent app, that corrects errors in previous console commands.
 pip3 install thefuck
 
-# A command-line tool and library for generating regular expressions from user-provided test cases.
-brew install grex
-
+# grex: A command-line tool and library for generating regular expressions from user-provided test cases.
+# graphviz: Graphviz is open source graph visualization software (we install it as it's PlantUML's dependency)
+brew install grex graphviz mackup htop jq navi node
 # ------------------------------------ Install PHP and Extentions ------------------------------------
 add-apt-repository -y ppa:ondrej/php
 
