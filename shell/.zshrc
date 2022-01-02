@@ -72,7 +72,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(composer docker docker-compose)
+plugins=(git laravel4 laravel5 composer macos vagrant docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
 
