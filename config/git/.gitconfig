@@ -116,6 +116,11 @@
 	# Make rebasing the default strategy
 	rebase = true
 
+[rebase]
+
+	# Stash on rebase
+	autoStash = true
+
 [init]
 	
 	defaultBranch = main
