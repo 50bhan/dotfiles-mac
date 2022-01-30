@@ -182,6 +182,9 @@
 	# Update local branch list with all new ones from the remote and remove any that are no longer there
 	update-branches= !"git remote update --prune"
 
+	# Update submodules to latest tips of remote branches
+	update-submodules= !"git submodule update --recursive --remote"
+
 	# List all of the commits after current user latest commit
 	after = !"git log $1@{1}..$1@{0} "$@""
 
