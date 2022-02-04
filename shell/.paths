@@ -2,7 +2,7 @@ export PATH=${PATH}:$HOME/.config/composer/vendor/bin
 export PATH=${PATH}:$HOME/symfony/bin
 
 # Golang
-export GOROOT=/usr/local/go
+export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOROOT/bin
 
 # Set this path based on your Golang projects directory
