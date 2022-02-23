@@ -48,7 +48,7 @@ pip3 install thefuck
 
 # grex: A command-line tool and library for generating regular expressions from user-provided test cases.
 # graphviz: Graphviz is open source graph visualization software (we install it as it's PlantUML's dependency)
-brew install grex graphviz mackup htop jq navi node
+brew install grex graphviz mackup htop jq navi node bat
 # ------------------------------------ Install PHP and Extentions ------------------------------------
 add-apt-repository -y ppa:ondrej/php
 
