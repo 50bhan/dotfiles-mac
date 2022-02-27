@@ -50,23 +50,11 @@ pip3 install thefuck
 # graphviz: Graphviz is open source graph visualization software (we install it as it's PlantUML's dependency)
 brew install grex graphviz mackup htop jq navi node bat
 # ------------------------------------ Install PHP and Extentions ------------------------------------
-add-apt-repository -y ppa:ondrej/php
+brew install php
 
-# It's recommended to install xdebug after other extensions. This way you don't need manual
-#     config and package manager will create config files for cli and fpm.
-apt update -y && \
-apt install -yq --fix-missing php8.0-{common,cli,fpm,bcmath,curl,gd,intl,mbstring,readline,mysql,opcache,sqlite3,xml,zip} && \
-apt install -yq --fix-missing php8.0-xdebug
-
-# Enable FPM module on apache
-a2enmod proxy_fcgi setenvif
-a2enconf php8.0-fpm
-
-# Configuration for Xdebug 3
-/bin/cp -rf config/php/* /etc/php/8.0/mods-available/
-
-# Install VLD
 pecl install channel://pecl.php.net/vld-0.17.1
+pecl install yaml
+pecl install xdebug
 
 # Install Kafka extenstion
 git clone --depth 1 --branch v1.5.0 https://github.com/edenhill/librdkafka.git \
