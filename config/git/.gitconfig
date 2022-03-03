@@ -142,6 +142,8 @@
 
 	first = log --pretty='%C(yellow)commit %H%nDate:\t%ad%nAuthor: %an <%ae>%n%n\t%s' --max-parents=0
 
+	mine = log --author="Sobhan Sharifi"
+
   	wip = !git add . && git commit -m "WIP"
 
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
