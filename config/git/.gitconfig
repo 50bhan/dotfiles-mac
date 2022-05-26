@@ -165,7 +165,7 @@
 	pristine = clean -fd
 
 	# Exclude files in local repository
-	exclude = ! echo $2 >> .git/info/exclude
+	exclude = ! echo $2 >> .git/info/exclude && git update-index --assume-unchanged $2
 
 	staged = diff --cached
 
